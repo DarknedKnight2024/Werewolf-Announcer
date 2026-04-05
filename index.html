@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>One Night Announcer</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ============================
+       PRELOAD: BACKGROUNDS
+       ============================ -->
+  <link rel="preload" as="image" href="backgrounds/werewolf.png">
+  <link rel="preload" as="image" href="backgrounds/villager.png">
+  <link rel="preload" as="image" href="backgrounds/alpha-wolf.png">
+  <link rel="preload" as="image" href="backgrounds/mystic-wolf.png">
+  <link rel="preload" as="image" href="backgrounds/dream-wolf.png">
+  <link rel="preload" as="image" href="backgrounds/apprentice-seer.png">
+  <link rel="preload" as="image" href="backgrounds/paranormal-investigator.png">
+  <link rel="preload" as="image" href="backgrounds/vampire.png">
+  <link rel="preload" as="image" href="backgrounds/renfield.png">
+  <link rel="preload" as="image" href="backgrounds/cupid.png">
+  <link rel="preload" as="image" href="backgrounds/apprentice-assassin.png">
+  <link rel="preload" as="image" href="backgrounds/alien.png">
+  <link rel="preload" as="image" href="backgrounds/synthetic-alien.png">
+  <link rel="preload" as="image" href="backgrounds/groob.png">
+  <link rel="preload" as="image" href="backgrounds/zerb.png">
+  <link rel="preload" as="image" href="backgrounds/super-villain.png">
+  <link rel="preload" as="image" href="backgrounds/oracle.png">
+  <link rel="preload" as="image" href="backgrounds/copycat.png">
+  <link rel="preload" as="image" href="backgrounds/doppelganger.png">
+  <link rel="preload" as="image" href="backgrounds/lovers.png">
+  <link rel="preload" as="image" href="backgrounds/body-snatcher.png">
+  <link rel="preload" as="image" href="backgrounds/randomizer.png">
+
+  <!-- ============================
+       PRELOAD: ROLE ART
+       ============================ -->
+  <link rel="preload" as="image" href="roles/werewolf.png">
+  <link rel="preload" as="image" href="roles/seer.png">
+  <link rel="preload" as="image" href="roles/robber.png">
+  <link rel="preload" as="image" href="roles/troublemaker.png">
+  <link rel="preload" as="image" href="roles/drunk.png">
+  <link rel="preload" as="image" href="roles/insomniac.png">
+  <link rel="preload" as="image" href="roles/alpha-wolf.png">
+  <link rel="preload" as="image" href="roles/mystic-wolf.png">
+  <link rel="preload" as="image" href="roles/dream-wolf.png">
+  <link rel="preload" as="image" href="roles/apprentice-seer.png">
+  <link rel="preload" as="image" href="roles/paranormal-investigator.png">
+  <link rel="preload" as="image" href="roles/vampire.png">
+  <link rel="preload" as="image" href="roles/renfield.png">
+  <link rel="preload" as="image" href="roles/cupid.png">
+  <link rel="preload" as="image" href="roles/apprentice-assassin.png">
+  <link rel="preload" as="image" href="roles/alien.png">
+  <link rel="preload" as="image" href="roles/synthetic-alien.png">
+  <link rel="preload" as="image" href="roles/groob.png">
+  <link rel="preload" as="image" href="roles/zerb.png">
+  <link rel="preload" as="image" href="roles/super-villain.png">
+  <link rel="preload" as="image" href="roles/oracle.png">
+  <link rel="preload" as="image" href="roles/copycat.png">
+  <link rel="preload" as="image" href="roles/doppelganger.png">
+  <link rel="preload" as="image" href="roles/lovers.png">
+  <link rel="preload" as="image" href="roles/body-snatcher.png">
+  <link rel="preload" as="image" href="roles/randomizer.png">
+
+  <!-- ============================
+       PRELOAD: NAMEPLATES
+       ============================ -->
+  <link rel="preload" as="image" href="names/werewolf.png">
+  <link rel="preload" as="image" href="names/seer.png">
+  <link rel="preload" as="image" href="names/robber.png">
+  <link rel="preload" as="image" href="names/troublemaker.png">
+  <link rel="preload" as="image" href="names/drunk.png">
+  <link rel="preload" as="image" href="names/insomniac.png">
+  <link rel="preload" as="image" href="names/alpha-wolf.png">
+  <link rel="preload" as="image" href="names/mystic-wolf.png">
+  <link rel="preload" as="image" href="names/dream-wolf.png">
+  <link rel="preload" as="image" href="names/apprentice-seer.png">
+  <link rel="preload" as="image" href="names/paranormal-investigator.png">
+  <link rel="preload" as="image" href="names/vampire.png">
+  <link rel="preload" as="image" href="names/renfield.png">
+  <link rel="preload" as="image" href="names/cupid.png">
+  <link rel="preload" as="image" href="names/apprentice-assassin.png">
+  <link rel="preload" as="image" href="names/alien.png">
+  <link rel="preload" as="image" href="names/synthetic-alien.png">
+  <link rel="preload" as="image" href="names/groob.png">
+  <link rel="preload" as="image" href="names/zerb.png">
+  <link rel="preload" as="image" href="names/super-villain.png">
+  <link rel="preload" as="image" href="names/oracle.png">
+  <link rel="preload" as="image" href="names/copycat.png">
+  <link rel="preload" as="image" href="names/doppelganger.png">
+  <link rel="preload" as="image" href="names/lovers.png">
+  <link rel="preload" as="image" href="names/body-snatcher.png">
+  <link rel="preload" as="image" href="names/randomizer.png">
+
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Night Order</h1>
+      <div id="sidebar-sections"></div>
+    </aside>
+
+    <main class="main">
+      <header class="tabs">
+        <button class="tab-button active" data-tab="original">Original</button>
+        <button class="tab-button" data-tab="daybreak">Daybreak</button>
+        <button class="tab-button" data-tab="vampire">Vampire</button>
+        <button class="tab-button" data-tab="alien">Alien</button>
+        <button class="tab-button" data-tab="supervillains">Super Villains</button>
+        <button class="tab-button" data-tab="bonus1">Bonus Pack 1</button>
+        <button class="tab-button" data-tab="bonus2">Bonus Pack 2</button>
+        <button class="tab-button" data-tab="bonus3">Bonus Pack 3</button>
+        <button class="tab-button" data-tab="bonus4">Bonus Pack 4</button>
+      </header>
+
+      <section class="role-grid">
+
+        <!-- ORIGINAL -->
+        <div class="tab-panel active" data-tab-panel="original">
+          <div class="role-card" data-role="Werewolf">
+            <img class="bg" src="backgrounds/werewolf.png">
+            <img class="role" src="roles/werewolf.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/werewolf.png">
+          </div>
+
+          <div class="role-card" data-role="Seer">
+            <img class="bg" src="backgrounds/villager.png">
+            <img class="role" src="roles/seer.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/seer.png">
+          </div>
+
+          <div class="role-card" data-role="Robber">
+            <img class="bg" src="backgrounds/villager.png">
+            <img class="role" src="roles/robber.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/robber.png">
+          </div>
+
+          <div class="role-card" data-role="Troublemaker">
+            <img class="bg" src="backgrounds/villager.png">
+            <img class="role" src="roles/troublemaker.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/troublemaker.png">
+          </div>
+
+          <div class="role-card" data-role="Drunk">
+            <img class="bg" src="backgrounds/villager.png">
+            <img class="role" src="roles/drunk.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/drunk.png">
+          </div>
+
+          <div class="role-card" data-role="Insomniac">
+            <img class="bg" src="backgrounds/villager.png">
+            <img class="role" src="roles/insomniac.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/insomniac.png">
+          </div>
+        </div>
+
+        <!-- DAYBREAK -->
+        <div class="tab-panel" data-tab-panel="daybreak">
+          <div class="role-card" data-role="Alpha Wolf">
+            <img class="bg" src="backgrounds/alpha-wolf.png">
+            <img class="role" src="roles/alpha-wolf.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/alpha-wolf.png">
+          </div>
+
+          <div class="role-card" data-role="Mystic Wolf">
+            <img class="bg" src="backgrounds/mystic-wolf.png">
+            <img class="role" src="roles/mystic-wolf.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/mystic-wolf.png">
+          </div>
+
+          <div class="role-card" data-role="Dream Wolf">
+            <img class="bg" src="backgrounds/dream-wolf.png">
+            <img class="role" src="roles/dream-wolf.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/dream-wolf.png">
+          </div>
+
+          <div class="role-card" data-role="Apprentice Seer">
+            <img class="bg" src="backgrounds/apprentice-seer.png">
+            <img class="role" src="roles/apprentice-seer.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/apprentice-seer.png">
+          </div>
+
+          <div class="role-card" data-role="Paranormal Investigator">
+            <img class="bg" src="backgrounds/paranormal-investigator.png">
+            <img class="role" src="roles/paranormal-investigator.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/paranormal-investigator.png">
+          </div>
+        </div>
+
+        <!-- VAMPIRE -->
+        <div class="tab-panel" data-tab-panel="vampire">
+          <div class="role-card" data-role="Vampire">
+            <img class="bg" src="backgrounds/vampire.png">
+            <img class="role" src="roles/vampire.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/vampire.png">
+          </div>
+
+          <div class="role-card" data-role="Renfield">
+            <img class="bg" src="backgrounds/renfield.png">
+            <img class="role" src="roles/renfield.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/renfield.png">
+          </div>
+
+          <div class="role-card" data-role="Cupid">
+            <img class="bg" src="backgrounds/cupid.png">
+            <img class="role" src="roles/cupid.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/cupid.png">
+          </div>
+
+          <div class="role-card" data-role="Apprentice Assassin">
+            <img class="bg" src="backgrounds/apprentice-assassin.png">
+            <img class="role" src="roles/apprentice-assassin.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/apprentice-assassin.png">
+          </div>
+        </div>
+
+        <!-- ALIEN -->
+        <div class="tab-panel" data-tab-panel="alien">
+          <div class="role-card" data-role="Alien">
+            <img class="bg" src="backgrounds/alien.png">
+            <img class="role" src="roles/alien.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/alien.png">
+          </div>
+
+          <div class="role-card" data-role="Synthetic Alien">
+            <img class="bg" src="backgrounds/synthetic-alien.png">
+            <img class="role" src="roles/synthetic-alien.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/synthetic-alien.png">
+          </div>
+
+          <div class="role-card" data-role="Groob">
+            <img class="bg" src="backgrounds/groob.png">
+            <img class="role" src="roles/groob.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/groob.png">
+          </div>
+
+          <div class="role-card" data-role="Zerb">
+            <img class="bg" src="backgrounds/zerb.png">
+            <img class="role" src="roles/zerb.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/zerb.png">
+          </div>
+        </div>
+
+        <!-- SUPER VILLAINS -->
+        <div class="tab-panel" data-tab-panel="supervillains">
+          <div class="role-card" data-role="Super Villain">
+            <img class="bg" src="backgrounds/super-villain.png">
+            <img class="role" src="roles/super-villain.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/super-villain.png">
+          </div>
+        </div>
+
+        <!-- BONUS 1 -->
+        <div class="tab-panel" data-tab-panel="bonus1">
+          <div class="role-card" data-role="Oracle">
+            <img class="bg" src="backgrounds/oracle.png">
+            <img class="role" src="roles/oracle.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/oracle.png">
+          </div>
+
+          <div class="role-card" data-role="Copycat">
+            <img class="bg" src="backgrounds/copycat.png">
+            <img class="role" src="roles/copycat.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/copycat.png">
+          </div>
+
+          <div class="role-card" data-role="Doppelganger">
+            <img class="bg" src="backgrounds/doppelganger.png">
+            <img class="role" src="roles/doppelganger.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/doppelganger.png">
+          </div>
+        </div>
+
+        <!-- BONUS 2 -->
+        <div class="tab-panel" data-tab-panel="bonus2">
+          <div class="role-card" data-role="Lovers">
+            <img class="bg" src="backgrounds/lovers.png">
+            <img class="role" src="roles/lovers.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/lovers.png">
+          </div>
+        </div>
+
+        <!-- BONUS 3 -->
+        <div class="tab-panel" data-tab-panel="bonus3">
+          <div class="role-card" data-role="Body Snatcher">
+            <img class="bg" src="backgrounds/body-snatcher.png">
+            <img class="role" src="roles/body-snatcher.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/body-snatcher.png">
+          </div>
+        </div>
+
+        <!-- BONUS 4 -->
+        <div class="tab-panel" data-tab-panel="bonus4">
+          <div class="role-card" data-role="Randomizer">
+            <img class="bg" src="backgrounds/randomizer.png">
+            <img class="role" src="roles/randomizer.png">
+            <div class="fade-bar"></div>
+            <img class="nameplate" src="names/randomizer.png">
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
